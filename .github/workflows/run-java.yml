@@ -22,7 +22,7 @@ jobs:
           java-version: '21'        # use your target version
 
       - name: Compile Java program
-        run: javac HelloWorld.java
+        run: javac src/main/java/org/example/HelloWorld.java
 
       - name: Run Java program
-        run: java HelloWorld
+        run: java -cp src/main/java org.example.HelloWorld
