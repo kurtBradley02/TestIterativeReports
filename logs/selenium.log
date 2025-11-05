@@ -10,3 +10,9 @@
 [20:52:39] [INFO ] Main - Typing search query: test
 [20:52:41] [INFO ] Main - Page title after search: https://www.google.com/search?q=test&sca_esv=497cb87f152d986c&source=hp&ei=lkgLaeqUAY7LvMcPhISV6QY&iflsig=AOw8s4IAAAAAaQtWpkbm3hZlm6ut3X3jE11UiLP2jCeo&ved=0ahUKEwjqt8zihtuQAxWOJe8CHQRCJW0Q4dUDCA0&uact=5&oq=test&gs_lp=Egdnd3Mtd2l6IgR0ZXN0SBRQAFgEcAB4AJABAJgBAKABAKoBALgBA8gBAPgBAZgCAKACAJgDAJIHAKAHALIHALgHAMIHAMgHAA&sclient=gws-wiz&sei=l0gLaYvfDtXR2roP-dzd2AU
 [20:52:41] [INFO ] Main - Browser closed.
+[22:18:50] [INFO ] Main - Starting Selenium test (headless mode)...
+[22:18:51] [INFO ] Main - Navigating to Google...
+[22:18:54] [WARN ] Main - No cookie popup found.
+[22:18:54] [INFO ] Main - Typing search query: test
+[22:18:56] [INFO ] Main - Page title after search: https://www.google.com/search?q=test&sca_esv=158cb2df441fc0a8&source=hp&ei=zFwLad2tC7PPkPIPiKDNwAw&iflsig=AOw8s4IAAAAAaQtq3JPW9mDXWLgLxjKJSPhOCUzXdSRL&ved=0ahUKEwjdw-qFmtuQAxWzJ0QIHQhQE8gQ4dUDCA0&uact=5&oq=test&gs_lp=Egdnd3Mtd2l6IgR0ZXN0SBNQAFgDcAB4AJABAJgBAKABAKoBALgBA8gBAPgBAZgCAKACAJgDAJIHAKAHALIHALgHAMIHAMgHAA&sclient=gws-wiz&sei=zVwLacHfHazS1e8Ph_S1yQs
+[22:18:56] [INFO ] Main - Browser closed.
