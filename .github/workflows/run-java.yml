@@ -28,16 +28,16 @@ jobs:
           distribution: temurin
           java-version: '21'
 
-<<<<<<< HEAD
+
       - name: Compile all sources
         run: javac $(find src/main/java -name "*.java")
 
       - name: Run selected main
         run: java -cp src/main/java $MAIN_CLASS
-=======
+
       - name: Compile Java program
         run: javac src/main/java/org/example/Main.java
 
       - name: Run Java program
         run: java -cp src/main/java org.example.Main
->>>>>>> a01209141f04fe65e653aa4ed88fd15dec1885fe
+
