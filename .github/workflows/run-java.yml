@@ -26,9 +26,24 @@ jobs:
 
       - name: Run Selenium in headless mode
         env:
-          # Optional, in case your Java reads a HEADLESS var
           HEADLESS: true
         run: mvn -B -q compile exec:java -Dexec.mainClass=org.example.Main
+
+      - name: Show workspace tree (debug)
+        if: always()
+        run: |
+          echo "GITHUB_WORKSPACE=$GITHUB_WORKSPACE"
+          ls -la
+          echo "---- reports ----"
+          ls -la reports || true
+
+      - name: Upload HTML report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: html-report
+          path: reports/*.html
+          if-no-files-found: warn
 
       - name: Upload logs
         if: always()

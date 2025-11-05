@@ -9,10 +9,12 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 
+import java.io.IOException;
+
 public class Main {
     private static final Logger log = LogManager.getLogger(Main.class);
 
-    public static void main(String[] args) throws InterruptedException {
+    public static void main(String[] args) throws InterruptedException, IOException {
         log.info("Starting Selenium test (headless mode)...");
 
         ChromeOptions options = new ChromeOptions();

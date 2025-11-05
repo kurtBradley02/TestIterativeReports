@@ -22,6 +22,12 @@ public final class SimpleHtmlReport implements AutoCloseable {
 
     public SimpleHtmlReport(String reportsDir, String testName) {
         try {
+
+            // ✅ 1. Determine where to write (GitHub Actions or local)
+            Path root = Paths.get(System.getenv().getOrDefault("GITHUB_WORKSPACE", System.getProperty("user.dir")));
+            Path outDir = root.resolve("reports");
+            Files.createDirectories(outDir);
+
             this.testName = (testName == null || testName.isBlank()) ? "Test" : testName;
             Path dir = Paths.get((reportsDir == null || reportsDir.isBlank()) ? "reports" : reportsDir);
             Files.createDirectories(dir);
