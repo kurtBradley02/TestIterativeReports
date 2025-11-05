@@ -1,0 +1,28 @@
+name: Run Java HelloWorld
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+  workflow_dispatch: # allows manual trigger
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Java
+        uses: actions/setup-java@v4
+        with:
+          distribution: 'temurin'   # or 'zulu', 'oracle', etc.
+          java-version: '21'        # use your target version
+
+      - name: Compile Java program
+        run: javac HelloWorld.java
+
+      - name: Run Java program
+        run: java HelloWorld
