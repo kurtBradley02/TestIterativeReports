@@ -24,31 +24,42 @@ public class Main {
 
         WebDriver driver = new ChromeDriver(options);
 
+        SimpleHtmlReport report = new SimpleHtmlReport("reports","test selenium github actions");
+
         try {
             log.info("Navigating to Google...");
+            report.info("Navigating to Google...");
             driver.get("https://www.google.com");
+
 
             Thread.sleep(1000);
             try {
                 WebElement agree = driver.findElement(By.xpath("//button[normalize-space()='I agree' or normalize-space()='Accept all']"));
                 agree.click();
                 log.info("Accepted cookies popup.");
+                report.info("Accepted cookies popup.");
             } catch (Exception e) {
                 log.warn("No cookie popup found.");
+                report.info("No cookie popup found.");
             }
 
             WebElement searchBox = driver.findElement(By.name("q"));
             log.info("Typing search query: test");
+            report.info("Typing search query: test");
             searchBox.sendKeys("test");
             searchBox.sendKeys(Keys.ENTER);
 
             Thread.sleep(2000);
             log.info("Page title after search: {}", driver.getTitle());
+            report.info("Page title after search: " + driver.getTitle());
+
         } catch (Exception e) {
             log.error("An error occurred during the test", e);
+            report.fail("An error occurred during the test" + e);
         } finally {
             driver.quit();
             log.info("Browser closed.");
+            report.info("Browser closed.");
         }
     }
 }
