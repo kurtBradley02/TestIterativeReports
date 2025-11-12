@@ -2,7 +2,7 @@ package com.poc;
 
 import com.microsoft.playwright.Page;
 import com.microsoft.playwright.options.AriaRole;
-import com.poc.tests.base.BaseTest;
+import com.poc.base.BaseTest;
 import org.testng.annotations.Test;
 
 public class NewTabHandleTest extends BaseTest {
