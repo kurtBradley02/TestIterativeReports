@@ -33,14 +33,6 @@ jobs:
           echo "---- reports ----"
           ls -la reports || true
 
-      - name: Upload HTML report
-        if: always()
-        uses: actions/upload-artifact@v4
-        with:
-          name: html-report
-          path: reports/*.html
-          if-no-files-found: warn
-
       - name: Upload logs
         if: always()
         uses: actions/upload-artifact@v4
