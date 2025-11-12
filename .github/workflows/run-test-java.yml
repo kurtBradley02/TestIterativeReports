@@ -1,4 +1,4 @@
-name: Selenium Headless CI
+name: Test Layer
 
 on:
   workflow_dispatch:
