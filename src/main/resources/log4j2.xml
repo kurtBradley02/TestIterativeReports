@@ -6,7 +6,7 @@
             <PatternLayout pattern="[%d{HH:mm:ss}] [%-5p] %c{1} - %m%n" />
         </Console>
         <!-- File output -->
-        <File name="File" fileName="logs/selenium.log" append="true">
+        <File name="File" fileName="logs/run.log" append="true">
             <PatternLayout pattern="[%d{HH:mm:ss}] [%-5p] %c{1} - %m%n" />
         </File>
     </Appenders>

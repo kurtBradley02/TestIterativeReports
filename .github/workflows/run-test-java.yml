@@ -22,10 +22,8 @@ jobs:
       - name: Verify Chrome
         run: google-chrome --version || chrome --version
 
-      - name: Run Selenium in headless mode
-        env:
-          HEADLESS: true
-        run: mvn -B -q test-compile exec:java -Dexec.classpathScope=test -Dexec.mainClass=example.Main2
+      - name: Run FrameHandleTest
+        run: mvn -q -Dtest=com.poc.tests.suites.PopUpHandleTest test
 
       - name: Show workspace tree (debug)
         if: always()
