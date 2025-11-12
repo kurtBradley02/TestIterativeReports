@@ -1,0 +1,52 @@
+name: Selenium Headless CI
+
+on:
+  workflow_dispatch:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '21'
+          cache: maven
+
+      - name: Install Chrome
+        uses: browser-actions/setup-chrome@v1
+
+      - name: Verify Chrome
+        run: google-chrome --version || chrome --version
+
+      - name: Run Selenium in headless mode
+        env:
+          HEADLESS: true
+        run: mvn -B -q test-compile exec:java -Dexec.classpathScope=test -Dexec.mainClass=example.Main2
+
+      - name: Show workspace tree (debug)
+        if: always()
+        run: |
+          echo "GITHUB_WORKSPACE=$GITHUB_WORKSPACE"
+          ls -la
+          echo "---- reports ----"
+          ls -la reports || true
+
+      - name: Upload HTML report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: html-report
+          path: reports/*.html
+          if-no-files-found: warn
+
+      - name: Upload logs
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: selenium-logs
+          path: logs/
+          if-no-files-found: ignore
