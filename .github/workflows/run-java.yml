@@ -25,7 +25,7 @@ jobs:
       - name: Run Selenium in headless mode
         env:
           HEADLESS: true
-        run: mvn -B -q compile exec:java -Dexec.mainClass=org.example.Main
+        run: mvn -B -q compile exec:java -Dexec.mainClass=org.example.Main2
 
       - name: Show workspace tree (debug)
         if: always()
